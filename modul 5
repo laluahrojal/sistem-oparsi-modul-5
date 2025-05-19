@@ -1,0 +1,104 @@
+NAT  
+# Tipe jaringan VM agar VM bisa akses internet lewat IP host.
+
+Bridged Adapter 
+# VM terhubung langsung ke jaringan fisik seperti perangkat lain.
+
+Host-only 
+# Jaringan antara host dan VM saja, tanpa akses ke luar.
+
+ip a 
+# Melihat informasi IP address perangkat.
+
+ping 8.8.8.8 
+# Mengecek koneksi internet (Google DNS).
+
+ip a 
+# Cek ulang alamat IP.
+
+ping 8.8.8.8 
+# Uji koneksi lagi.
+
+ip a 
+# Cek IP lagi (biasanya setelah ganti konfigurasi).
+
+ping 8.8.8.8 
+# Tes koneksi ulang.
+
+ip a 
+# Cek IP address terkini.
+
+ping 8.8.8.8 
+# Tes koneksi lagi.
+
+ip a 
+# Lihat status IP terakhir.
+
+ping 192.168.56.101 
+# Cek koneksi ke IP lokal/VM lain.
+
+sudo apt install openssh-server 
+# Install server SSH agar bisa akses VM dari jauh.jika sudh teken y
+
+sudo systemctl enable ssh 
+# SSH otomatis aktif saat booting.
+
+sudo systemctl start ssh 
+# Menyalakan layanan SSH sekarang.
+
+ssh as@192.168.1.25 
+# Remote login ke komputer lain via SSH.
+
+ls /home/as/ 
+# Lihat isi folder milik user "as".
+
+cat tugas.txt 
+# Tampilkan isi file tugas.txt.
+
+ip a 
+# Cek ulang IP address.
+
+ping 192.168.136.?
+# Cek koneksi ke alamat lokal lain (IP belum lengkap).
+
+sudo ufw enable 
+# Aktifkan firewall UFW.
+
+sudo ufw allow 22 
+# Izinkan koneksi SSH (port 22).
+
+sudo ufw status 
+# Lihat status firewall.
+
+sudo ufw deny 22 
+# Blokir koneksi SSH (port 22).
+
+sudo ufw status 
+# Cek status aturan firewall.
+
+sudo ufw allow 22 
+# Izinkan kembali port SSH.
+
+sudo ufw status 
+# Lihat status firewall lagi.
+
+sudo adduser ecan 
+# Tambah user baru bernama ecan jika sudh silahkan tekan y
+
+sudo addgroup modul 
+# Buat grup baru bernama modul.
+
+sudo usermod -aG modul ecan 
+# Masukkan ecan ke grup modul.
+
+sudo chown ecan:modul tugas.txt 
+# Ubah pemilik file ke user ecan dan grup modul.
+
+ls -l 
+# Lihat detail file termasuk izin dan pemilik.
+
+sudo chmod 750 tugas.txt 
+# Atur izin file: pemilik bisa semua, grup bisa baca/eksekusi, lainnya dilarang.
+
+ls -l 
+# Cek ulang izin file setelah diubah.
