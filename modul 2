@@ -1,0 +1,56 @@
+#beberapa perintah yang ada fi modul 2
+
+free -h
+Fungsi: Melihat penggunaan RAM dan swap memory secara ringkas (dalam format yang mudah dibaca, misalnya MB/GB).
+Contoh output: Menampilkan total RAM, memori yang digunakan, dan yang masih tersedia.
+
+htop
+Fungsi: Menampilkan pemakaian CPU, RAM, dan proses-proses secara real-time dengan tampilan interaktif.
+Catatan: Lebih informatif dari top dan bisa digerakkan dengan keyboard.
+
+cat /proc/meminfo
+Fungsi: Menampilkan informasi detail mengenai memori, termasuk cache, buffer, dan swap.
+Catatan: Berguna untuk analisis lebih dalam terkait penggunaan memori.
+
+vmstat -s
+Fungsi: Menampilkan statistik sistem, seperti jumlah memori, swap, I/O, dan CPU activity.
+Catatan: Sangat berguna untuk troubleshooting performa sistem.
+
+ps aux --sort=-%mem | head
+Fungsi: Melihat proses-proses yang menggunakan memori paling besar.
+Penjelasan:
+
+ps aux: Menampilkan semua proses yang berjalan.
+
+--sort=-%mem: Mengurutkan berdasarkan penggunaan memori dari yang tertinggi.
+
+head: Menampilkan 10 proses teratas saja.
+
+cat /proc/cpuinfo
+Fungsi: Menampilkan informasi detail tentang prosesor, seperti model, kecepatan, dan jumlah core.
+
+lscpu
+Fungsi: Menampilkan informasi CPU dengan format tabel, lebih mudah dibaca dibandingkan /proc/cpuinfo.
+
+swapon --summary
+Fungsi: Menampilkan status dan ukuran partisi swap yang aktif.
+
+whoami
+Fungsi: Menampilkan nama pengguna yang sedang login saat ini.
+
+chmod
+Fungsi: Mengubah izin akses file atau direktori (baca, tulis, eksekusi).
+Contoh: chmod +x file.sh memberi izin agar file bisa dijalankan.
+
+sudo reboot
+Fungsi: Me-restart sistem komputer.
+
+sudo shutdown -h +1
+Fungsi: Mematikan komputer dalam waktu 1 menit.
+Catatan: Angka +1 bisa diganti sesuai kebutuhan.
+
+shutdown -c
+Fungsi: Membatalkan perintah shutdown yang telah dijadwalkan.
+
+sudo shutdown -r now
+Fungsi: Me-restart sistem secara langsung (tanpa menunggu).
