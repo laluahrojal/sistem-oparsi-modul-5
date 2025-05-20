@@ -1,0 +1,64 @@
+#berikut beberapa perintah 
+
+#MEMBUAT FILE SHELL
+nano tes.sh
+  #!/bin/bash
+  echho "selamat datang"
+ls
+ls -l tes.sh
+chmod +x tes.sh
+ls -l tes.sh
+./tes.sh
+
+#MEMBUAT FILE SEDERHANA PROG01.SH
+nano prog01.sh
+  #!/bin/bash
+  #program shell
+  #
+
+  var1="hello word"
+  echo $var1
+chmod +x prog01.sh
+./prog01.sh
+
+#MENGGUNAKAN VARIABEL PADA SHELL INTERAKTIF
+VPT=UMMETRO
+echo $VPT
+
+#MENGGABUNGKAN 2 VARIABEL
+V1=UM
+V2:':'
+V3=METRO
+V4=$V1$V2$V3
+echo $V4
+
+#MENGGUNAKAN INSTRUKSI RED
+read nama
+echo $nama
+
+#MEMBUAT PROGRAM OPERASI MATEMATIKA PROG02.SH
+nano prog02.sh
+  #!/bin/bash
+  a=10
+  b=2
+let jumlah=$a+$b;
+echo $jumlah
+chmod  +x prog02.sh
+./prog02.sh
+
+#CARA INSTALL CRONTAB
+sudo apt update
+sudo install cron
+sudo systemctl enable cron 
+sudo systemctl start cron
+crontab -e
+  0 7 * * * /home/Caca/scrip.sh
+crontab -1
+
+# Buat file script
+nano waktu.sh
+  #!/bin/bash
+  echo "Waktu saat ini: $(date)" >> /home/Caca/hasil.txt
+chmod +x waktu.sh
+./waktu.sh
+cat hasil.txt
