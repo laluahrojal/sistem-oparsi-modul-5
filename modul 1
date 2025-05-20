@@ -1,0 +1,42 @@
+1. Navigasi dan Manajemen File/Folder
+Perintah	Penjelasan
+ls	Menampilkan daftar file dan folder di direktori saat ini.
+cd nama_folder	Masuk ke folder tertentu.
+cd ..	Kembali ke folder sebelumnya.
+touch nama_file	Membuat file kosong baru.
+mkdir nama_folder	Membuat folder baru.
+cp file1 file2	Menyalin file1 menjadi file2.
+mv file1 file2	Memindahkan atau mengganti nama file.
+rm file	Menghapus file.
+rm -r folder	Menghapus folder dan seluruh isinya.
+cat nama_file	Menampilkan isi file.
+
+
+2. Perintah Update dan Upgrade Sistem
+Perintah	Penjelasan
+sudo apt update	Memperbarui daftar paket dari repositori.
+sudo apt upgrade -y	Memperbarui semua paket terpasang ke versi terbaru.
+sudo apt full-upgrade -y	Upgrade total, bisa menghapus paket lama jika diperlukan.
+sudo apt autoremove -y	Menghapus paket tidak dibutuhkan.
+sudo apt clean	Menghapus cache instalasi paket.
+
+
+3. Manajemen Hak Akses
+Perintah	Penjelasan
+chmod 755 nama_file	Mengatur izin akses file (rwxr-xr-x).
+chown user:group nama_file	Mengubah pemilik file/folder.
+umask	Menampilkan nilai default izin file baru.
+
+
+4. Perintah pip (Python Package Installer)
+Perintah	Penjelasan
+pip3 install nama_pustaka	Menginstal pustaka Python.
+pip list	Menampilkan daftar pustaka Python yang sudah diinstal.
+pip install --upgrade nama_pustaka	Memperbarui pustaka Python.
+pip3 uninstall nama_pustaka	Menghapus pustaka Python.
+
+5. Perintah Kompresi dan Ekstraksi
+    Format	Perintah Kompres	Perintah Ekstrak
+    zip	zip file.zip file.txt	unzip file.zip
+    tar	tar -cvf file.tar folder/	tar -xvf file.tar
+    tar.gz	tar -czvf file.tar.gz folder/	tar -xzvf file.tar.gz
