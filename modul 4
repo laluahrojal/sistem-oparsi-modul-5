@@ -1,0 +1,102 @@
+# Membuat direktori baru bernama Modul4
+mkdir Modul4
+
+# Masuk ke direktori Modul4
+cd Modul4
+
+# Menampilkan isi direktori (awal kosong)
+ls
+
+# Membuat file kosong bernama file1.txt
+touch file1.txt
+
+# Membuat subdirektori bernama folderbaru
+mkdir folderbaru
+
+# Menyalin file1.txt ke dalam folderbaru
+cp file1.txt folderbaru
+
+# Masuk ke folderbaru
+cd folderbaru
+
+# Menampilkan isi folderbaru
+ls
+
+# Kembali ke direktori Modul4
+cd ..
+
+# Menampilkan isi direktori Modul4
+ls
+
+# Menghapus file bernama filesampah.txt
+rm filesampah.txt
+
+# Menghapus direktori kosong bernama foldersampah
+rmdir foldersampah
+
+# Mengecek kembali isi direktori
+ls
+
+# Mengubah nama file file1.txt menjadi file2.txt
+mv file1.txt file2.txt
+
+# Menampilkan isi direktori Modul4
+ls
+
+# Memindahkan file2.txt ke dalam folderbaru
+mv file2.txt folderbaru
+
+# Mengecek isi direktori setelah pemindahan
+ls
+
+# Masuk ke folderbaru
+cd folderbaru
+
+# Menampilkan isi folderbaru
+ls
+
+# Memindahkan file2.txt ke luar folder (ke Modul4)
+mv file2.txt /home/Izzul_Faraby/Modul4
+
+# Menampilkan isi direktori saat ini
+ls
+
+# Kembali ke direktori Modul4
+cd ..
+
+# Menampilkan isi direktori Modul4
+ls
+
+# Mengatur izin akses file dengan symbolic mode
+chmod u+x file2.txt
+chmod g+x file2.txt
+chmod o+w file2.txt
+chmod ug-x file2.txt
+
+# Mengatur izin akses file dengan octal mode
+chmod 755 file2.txt
+chmod 000 file2.txt
+
+# Membuat user baru bernama jumadil
+sudo adduser jumadil
+
+# Menampilkan detail file dan folder
+ls -l
+
+# Mengubah pemilik file2.txt menjadi jumadil
+sudo chown jumadil file2.txt
+
+# Mengubah pemilik folderbaru menjadi junadil
+sudo chown junadil folderbaru
+
+# Menampilkan kembali detail file dan folder
+ls -l
+
+# Kembali ke direktori di atas Modul4
+cd ..
+
+# Menampilkan isi direktori
+ls -l
+
+# Mengubah kepemilikan seluruh isi direktori Modul4 ke user junadil
+sudo chown -R junadil:junadil Modul4
