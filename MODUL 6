@@ -1,0 +1,110 @@
+INSTALASI DOCKER DI UBUNTU
+sudo apt update
+#  Memperbarui daftar paket di sistem agar siap untuk instalasi software terbaru.
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+#  Menginstal paket penting agar Ubuntu bisa mengakses repositori eksternal melalui HTTPS dan mengelola sertifikat serta repositori.
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#  Mengunduh kunci GPG dari Docker dan menambahkannya ke sistem agar repository Docker dianggap aman/tepercaya.
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+#  Menambahkan alamat repository Docker ke sistem agar bisa digunakan untuk menginstal Docker langsung dari sumber resmi.
+
+sudo apt update
+#  Mengupdate ulang daftar paket, kini termasuk paket dari Docker repository.
+
+sudo apt install docker-ce
+#  Menginstal Docker Engine Community Edition, yaitu mesin utama untuk menjalankan container Docker.
+
+sudo systemctl enable docker
+# Mengatur Docker agar otomatis aktif setiap kali sistem dinyalakan.
+
+sudo usermod -aG docker [nama_user]
+# Memberi hak akses user ke Docker agar bisa menjalankan perintah Docker tanpa sudo.
+
+PERSIAPAN PROYEK PYTHON UNTUK DOCKER
+mkdir docker
+# Membuat folder bernama docker untuk menyimpan semua file proyek.
+
+nano app.py
+#  Membuat file program Python utama (app.py), bisa berisi skrip untuk menampilkan grafik, dll.
+
+nano Dockerfile
+#  Membuat file konfigurasi Docker (Dockerfile) untuk membangun image dari proyek Python kamu.
+
+nano requirements.txt
+# Membuat file daftar library Python yang akan diinstal dalam Docker (numpy, matplotlib, dll).
+
+sudo docker build -t [nama_image] .
+# Membuat Docker image dari file Dockerfile, diberi nama sesuai yang kamu pilih.
+ VIRTUAL ENV (Lingkungan Python Khusus Proyek)
+mkdir virtualenv
+#  Membuat folder untuk virtual environment (lingkungan Python terpisah dari sistem utama).
+
+cd virtualenv
+# Masuk ke folder virtualenv.
+
+source env/bin/activate
+#  Mengaktifkan lingkungan virtual agar semua library Python hanya terinstal di sini.
+
+INSTALASI PYTHON & VERIFIKASI
+sudo apt install python3
+# Memastikan Python 3 sudah terinstal.
+
+python3 --version
+#  Mengecek versi Python untuk memastikan instalasi berhasil.
+
+ MENJALANKAN DOCKER DAN APLIKASI GUI
+sudo systemctl start docker
+# Menyalakan layanan Docker (kalau belum aktif).
+
+sudo systemctl enable docker
+#  Memastikan Docker aktif setiap kali komputer dinyalakan.
+
+xhost +local:docker
+# Memberi akses Docker untuk menampilkan grafik di layar kamu (X server).
+
+xhost
+#  Melihat siapa saja yang diberi izin akses untuk menampilkan grafik di sistem kamu.
+
+docker run -it [nama_image]
+#  Menjalankan container Docker secara interaktif dari image yang sudah dibuat.
+
+MENAMPILKAN GRAFIK PYTHON (NUMPY + MATPLOTLIB)
+apt update && apt install -y python3-tk
+#  Menginstal modul tambahan agar Python bisa menampilkan grafik dengan GUI (Tkinter).
+
+pip install numpy matplotlib
+# Menginstal dua library Python penting:
+
+NumPy → untuk data numerik.
+
+Matplotlib → untuk membuat grafik/visualisasi.
+
+ MENULIS KODE PYTHON UNTUK GRAFIK
+Di Python, ketik kode berikut:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 10, 100)                                                                      
+# Membuat 100 angka dari 0 sampai 10
+y = np.sin(x)                                                                                                   
+# Menghitung nilai sinus dari x
+
+plt.plot(x, y)                                                                                                      
+# Membuat grafik y terhadap x
+plt.title("grafik")                                                                                                
+# Judul grafik
+plt.show()                                                                                                        
+# Menampilkan grafik
+ Ini akan menampilkan grafik fungsi sinus (gelombang).
+
+VERSI KEDUA (DALAM VIRTUALENV)
+Jika dijalankan dari (env) alias virtual environment, kode tetap sama seperti di atas. Ini hanya menunjukkan bahwa kita bisa menjalankan skrip Python dalam lingkungan virtual juga.
+
+KELUAR DARI VIRTUALENV
+deactivate
+#  Keluar dari virtual environment dan kembali ke Python global sistem utama.
